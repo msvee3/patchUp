@@ -1,0 +1,16 @@
+{
+  "name": "patchup",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "zustand": "^4.4.0",
+    "date-fns": "^2.30.0"
+  }
+}
