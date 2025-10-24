@@ -20,40 +20,40 @@ export default function UserDashboard() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-lg font-semibold mb-2">Welcome</h3>
-          <p className="text-gray-600">{user?.fullName}</p>
+        <div className="bg-white dark:bg-zinc-800 p-6 rounded-lg shadow transition-colors duration-300">
+          <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-100">Welcome</h3>
+          <p className="text-gray-600 dark:text-gray-300">{user?.fullName}</p>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-lg font-semibold mb-2">Your Role</h3>
-          <p className="text-blue-600 font-bold">{user?.role}</p>
+        <div className="bg-white dark:bg-zinc-800 p-6 rounded-lg shadow transition-colors duration-300">
+          <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-100">Your Role</h3>
+          <p className="text-blue-600 dark:text-blue-400 font-bold">{user?.role}</p>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-lg font-semibold mb-2">Zone</h3>
-          <p className="text-gray-600">{user?.zone || "N/A"}</p>
+        <div className="bg-white dark:bg-zinc-800 p-6 rounded-lg shadow transition-colors duration-300">
+          <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-100">Zone</h3>
+          <p className="text-gray-600 dark:text-gray-300">{user?.zone || "N/A"}</p>
         </div>
       </div>
 
       <div className="flex gap-4">
         <button
           onClick={() => setShowScanner(!showScanner)}
-          className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
+          className="bg-blue-600 dark:bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-800 transition"
         >
           {showScanner ? "Close" : "Scan QR Code"}
         </button>
       </div>
 
       {showScanner && <QRScanner onScan={handleQRScanned} />}
-      
+
       {showForm && scannedZone && (
-        <IssueForm 
+        <IssueForm
           zoneId={scannedZone}
           onClose={() => { setShowForm(false); setScannedZone(null); }}
         />
       )}
 
-      <div className="bg-white p-6 rounded-lg shadow">
-        <h3 className="text-lg font-semibold mb-4">Your Issues</h3>
+      <div className="bg-white dark:bg-zinc-800 p-6 rounded-lg shadow transition-colors duration-300">
+        <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-100">Your Issues</h3>
         <IssuesList userId={user?.id} />
       </div>
     </div>
