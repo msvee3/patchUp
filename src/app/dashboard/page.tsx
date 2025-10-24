@@ -41,9 +41,9 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-zinc-900 transition-colors duration-300">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 transition-colors duration-300">
       <Navbar />
-      <main className="p-4 sm:p-6 max-w-7xl mx-auto w-full">
+      <main className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto w-full">
         {renderDashboard()}
       </main>
     </div>

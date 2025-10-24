@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+:root {
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+  --color-primary-light: #60a5fa;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +16,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -19,12 +24,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #f9fafb;
   color: #1e293b;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Dark mode support */
 .dark body {
-  background-color: #18181b;
-  color: #f3f4f6;
+  background-color: #09090b;
+  color: #f4f4f5;
 }
 
 code {
@@ -66,4 +72,16 @@ code {
 .fade-in {
   animation: fadeIn 0.3s ease-in-out;
 }
+
+/* Utility helpers to mirror design tokens used in components */
+.bg-primary-DEFAULT { background-color: var(--color-primary); }
+.bg-primary-dark { background-color: var(--color-primary-dark); }
+.text-primary-DEFAULT { color: var(--color-primary); }
+
+/* Dark mode helpers (when .dark class is applied to html) */
+.dark .bg-primary-DEFAULT { background-color: var(--color-primary-dark); }
+.dark .bg-primary-dark { background-color: var(--color-primary); }
+
+/* Slight container backdrop for app pages */
+.app-container { min-height: 100vh; background-color: var(--tw-bg-opacity, transparent); }
 
