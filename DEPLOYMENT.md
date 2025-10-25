@@ -6,7 +6,7 @@ This guide covers deploying PatchUp to various platforms for production use.
 ## Local Development
 
 ### Prerequisites
-- Node.js 18.x or higher
+- Node.js 20.x or higher (required for Next.js 16)
 - npm or yarn
 - Git
 
@@ -162,7 +162,7 @@ sudo certbot --nginx -d your-domain.com
 ### Create Dockerfile
 ```dockerfile
 # Build stage
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
@@ -170,7 +170,7 @@ COPY . .
 RUN npm run build
 
 # Runtime stage
-FROM node:18-alpine
+FROM node:20-alpine
 WORKDIR /app
 COPY package*.json ./
 RUN npm install --production
@@ -418,7 +418,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: '18'
+          node-version: '20'
       - run: npm install
       - run: npm run build
       - run: npm run test

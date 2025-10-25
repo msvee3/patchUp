@@ -3,7 +3,24 @@ import { useState } from "react";
 import { useAuthStore } from "@/store/authStore";
 
 interface Props {
-  zoneId: string;
+         <div className="flex flex-col sm:flex-row gap-4">
+          <button
+            type="submit"
+            className="group flex-1 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-lg hover:shadow-2xl transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2"
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            Submit Issue
+          </button>
+          <button
+            type="button"
+            onClick={onClose}
+            className="flex-1 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 px-6 py-3 rounded-xl font-bold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+          >
+            Cancel
+          </button>
+        </div>;
   onClose: () => void;
 }
 
@@ -23,9 +40,16 @@ export default function IssueForm({ zoneId, onClose }: Props) {
   };
 
   return (
-    <div className="bg-white dark:bg-zinc-900 p-6 sm:p-8 rounded-lg shadow border border-gray-100 dark:border-zinc-800">
-      <h3 className="text-lg sm:text-xl font-semibold mb-4 text-gray-900 dark:text-white">Report Issue</h3>
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="space-y-6">
+      <h3 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-3">
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
+          <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+        </div>
+        Report Issue
+      </h3>
+      <form onSubmit={handleSubmit} className="space-y-5">
         <div>
           <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
             Zone
