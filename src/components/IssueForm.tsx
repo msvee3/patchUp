@@ -3,24 +3,7 @@ import { useState } from "react";
 import { useAuthStore } from "@/store/authStore";
 
 interface Props {
-         <div className="flex flex-col sm:flex-row gap-4">
-          <button
-            type="submit"
-            className="group flex-1 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-lg hover:shadow-2xl transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-            Submit Issue
-          </button>
-          <button
-            type="button"
-            onClick={onClose}
-            className="flex-1 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 px-6 py-3 rounded-xl font-bold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-          >
-            Cancel
-          </button>
-        </div>;
+  zoneId: string;
   onClose: () => void;
 }
 
